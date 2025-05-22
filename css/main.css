@@ -211,12 +211,12 @@ h6 {
   }
 }
 
-
-@media (max-width: 1199px) {
-  .header {
-    left: -100%;
+@media (min-width: 1200px) {
+  .main {
+    margin-left: 260px;
   }
 }
+
 
 .header.header-show {
   left: 0;
