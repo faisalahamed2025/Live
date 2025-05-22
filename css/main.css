@@ -205,13 +205,12 @@ h6 {
   background: var(--accent-color);
 }
 
-@media (min-width: 1200px) {
-
-  .header~main,
-  .header~#footer {
-    margin-left: 300px;
+@media (max-width: 991px) {
+  .header {
+    left: -100%;
   }
 }
+
 
 @media (max-width: 1199px) {
   .header {
