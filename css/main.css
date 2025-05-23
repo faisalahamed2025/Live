@@ -168,20 +168,7 @@ h6 {
   line-height: 1;
   margin-bottom: 15px;
 }
-.main {
-  transition: margin-left 0.3s ease;
-}
 
-@media (min-width: 1200px) {
-  .main {
-    margin-left: 260px;
-  }
-}
-
-@media (max-width: 1199px) {
-  .main {
-    margin-left: 0;
-  }
 }
 
 .header .logo img {
