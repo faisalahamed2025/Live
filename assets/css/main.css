@@ -156,6 +156,21 @@ h6 {
   z-index: 997;
   border-right: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
+.main {
+  transition: margin-left 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .main {
+    margin-left: 260px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main {
+    margin-left: 0;
+  }
+}
 
 .header .profile-img img {
   margin: 15px auto;
