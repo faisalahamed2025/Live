@@ -147,12 +147,12 @@ html {
 .header {
   color: var(--default-color);
   background-color: var(--background-color);
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   padding: 0 15px;
-  width: 180px;
+  width: 300px;
   transition: all ease-in-out 0.3s;
   overflow-y: auto;
   z-index: 997;
@@ -216,7 +216,7 @@ html {
     margin-left: 200px;
   }
 }
-@media (max-width: 997px) {
+@media (max-width: 1199px) {
   .header {
     left: -100%;
   }
@@ -630,7 +630,7 @@ section,
   color: var(--accent-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .hero h2 {
     font-size: 32px;
   }
