@@ -216,7 +216,7 @@ h6 {
 }
 @media (max-width: 997px) {
   .header {
-    left: 0;
+    left: -100%;
   }
 }
 
