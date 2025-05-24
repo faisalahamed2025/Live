@@ -86,7 +86,9 @@ h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
 }
-
+html {
+  scroll-padding-top: 100px; /* matches navbar height */
+}
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
