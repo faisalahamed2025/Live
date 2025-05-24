@@ -214,6 +214,21 @@ h6 {
     margin-left: 200px;
   }
 }
+.main {
+  transition: margin-left 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+  .main {
+    margin-left: 260px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .main {
+    margin-left: 0;
+  }
+}
 
 @media (max-width: 1199px) {
   .header {
