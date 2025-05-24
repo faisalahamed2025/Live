@@ -630,7 +630,7 @@ section,
   color: var(--accent-color);
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .hero h2 {
     font-size: 32px;
   }
