@@ -224,17 +224,35 @@ html {
 
 .main {
   transition: margin-left 0.3s ease;
-}
+/* --- DESKTOP FIX --- */
 @media (min-width: 992px) {
   main {
-    margin-left: 250px; /* match your sidebar width exactly */
+    margin-left: 250px; /* match header/sidebar width */
+  }
+
+  #header {
+    position: fixed;
+    width: 250px;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 999;
   }
 }
 
+/* --- MOBILE RESET --- */
 @media (max-width: 991px) {
   main {
     margin-left: 0;
   }
+
+  #header {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
 }
 
 
