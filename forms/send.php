@@ -12,13 +12,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'your.email@gmail.com';      // <-- Your Gmail address
-        $mail->Password = 'your-app-password';         // <-- Your Gmail App Password
+        $mail->Username = 'faisalking3rd@gmail.com';      // <-- Your Gmail address
+        $mail->Password = 'ifru wism wskc olrd';         // <-- Your Gmail App Password
         $mail->SMTPSecure = 'tls';
         $mail->Port = 587;
 
-        $mail->setFrom('your.email@gmail.com', 'Your Name');
-        $mail->addAddress('your.email@gmail.com');     // <-- Your inbox
+        $mail->setFrom('faisalking3rd@gmail.com', 'Your Name');
+        $mail->addAddress('faisalking3rd@gmail.com');     // <-- Your inbox
 
         $mail->isHTML(false);
         $mail->Subject = 'New Contact Form Message';
