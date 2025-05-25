@@ -1,7 +1,7 @@
 
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $to = "your.email@example.com";  // <-- Change to your real email
+    $to = "faisalking3rd@gmail.com";  // <-- Change to your real email
     $subject = "New Contact Form Message";
     $name = htmlspecialchars($_POST["name"]);
     $email = htmlspecialchars($_POST["email"]);
