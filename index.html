@@ -577,11 +577,12 @@
                 </div>
               </div><!-- End Info Item -->
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus" frameborder="0" style="border:0; width: 100%; height: 270px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>-->
+           
             </div>
           </div>
 
-          <div class="col-lg-7">
+         <!<div class="col-lg-7">
             <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
               <div class="row gy-4">
 
@@ -615,9 +616,37 @@
 
               </div>
             </form>
-          </div><!-- End Contact Form -->
+           </div>-->
+          <div class="col-lg-7">
+  <form action="forms/send.php" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+    <div class="row gy-4">
+      <div class="col-md-6">
+        <label for="name-field" class="pb-2">Your Name</label>
+        <input type="text" name="name" id="name-field" class="form-control" required>
+      </div>
 
-        </div>
+      <div class="col-md-6">
+        <label for="email-field" class="pb-2">Your Email</label>
+        <input type="email" name="email" id="email-field" class="form-control" required>
+      </div>
+
+      <div class="col-md-12">
+        <label for="subject-field" class="pb-2">Subject</label>
+        <input type="text" name="subject" id="subject-field" class="form-control" required>
+      </div>
+
+      <div class="col-md-12">
+        <label for="message-field" class="pb-2">Message</label>
+        <textarea name="message" id="message-field" class="form-control" rows="10" required></textarea>
+      </div>
+
+      <div class="col-md-12 text-center">
+        <button type="submit" class="btn btn-primary mt-3">Send Message</button>
+      </div>
+    </div>
+  </form>
+</div>
+
 
       </div>
 
@@ -663,20 +692,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 <body>
-  <div class="container" style="padding: 2rem;">
-    <h1>Contact Me</h1>
-    <form action="send.php" method="POST">
-      <label for="name">Your Name</label><br>
-      <input type="text" name="name" required><br><br>
 
-      <label for="email">Your Email</label><br>
-      <input type="email" name="email" required><br><br>
-
-      <label for="message">Message</label><br>
-      <textarea name="message" rows="6" required></textarea><br><br>
-
-      <button type="submit">Send Message</button>
-    </form>
   </div>
 </body>
 </body>
