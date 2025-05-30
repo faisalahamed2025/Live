@@ -350,6 +350,17 @@ const observer = new IntersectionObserver(entries => {
 });
 observer.observe(document.querySelector('#skills'));
 </script>
+<div id="imgModal" class="modal" onclick="this.style.display='none'">
+  <span class="close" onclick="this.parentElement.style.display='none'">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+function openModal(img) {
+  document.getElementById('imgModal').style.display = 'block';
+  document.getElementById('modalImage').src = img.src;
+}
+</script>
 
 </body>
 </html>
