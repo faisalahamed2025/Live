@@ -971,6 +971,57 @@ section,
   line-height: 24px;
   font-size: 14px;
 }
+/* # Expertise Section
+--------------------------------------------------------------*/
+.expertise .expertise-item {
+  position: relative;
+}
+
+.expertise .expertise-item .icon {
+  background: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  transition: 0.5s;
+  border: 1px solid var(--accent-color);
+  margin-right: 20px;
+}
+
+.expertise .expertise-item .icon i {
+  color: var(--contrast-color);
+  font-size: 24px;
+  line-height: 0;
+}
+
+.expertise .expertise-item:hover .icon {
+  background: var(--surface-color);
+}
+
+.expertise .expertise-item:hover .icon i {
+  color: var(--accent-color);
+}
+
+.expertise .expertise-item .title {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.expertise .expertise-item .title a {
+  color: var(--heading-color);
+}
+
+.expertise .expertise-item .title a:hover {
+  color: var(--accent-color);
+}
+
+.exprtise .expertsise-item .description {
+  line-height: 24px;
+  font-size: 14px;
+}
 
 /*--------------------------------------------------------------
 # Testimonials Section
