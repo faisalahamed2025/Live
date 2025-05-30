@@ -44,6 +44,21 @@
   display: flex;
   gap: 10px;
 }
+.resume-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+.column {
+  flex: 1;
+}
+.left {
+  max-width: 40%;
+}
+.right {
+  max-width: 60%;
+}
+
 .overlay-buttons a {
   background: #007bff;
   color: #fff;
