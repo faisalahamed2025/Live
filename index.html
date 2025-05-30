@@ -185,17 +185,21 @@
     </section><!-- /Stats Section -->
 
     <!-- Skills Section -->
- 
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Skills with Demos - Faisal Ahamed</title>
-  <link href="assets/css/style.css" rel="stylesheet">
+  <title>Faisal Ahamed - Skills & Expertise</title>
   <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f4f4f4; }
+    .section-bg { padding: 40px 20px; background: #fff; margin-bottom: 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-title h2 { font-size: 28px; margin-bottom: 10px; }
+    .section-title p { font-size: 15px; color: #666; margin-bottom: 30px; }
+
     .skills .progress {
       height: 20px;
-      background: #f0f0f0;
+      background: #eee;
       border-radius: 10px;
       overflow: hidden;
       margin-bottom: 15px;
@@ -209,10 +213,61 @@
       line-height: 20px;
       white-space: nowrap;
     }
-    .btn-demo {
+
+    .expertise-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .expertise-card {
+      flex: 1 1 calc(50% - 20px);
+      border: 1px solid #ccc;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+    .expertise-card:hover {
+      transform: translateY(-5px);
+    }
+    .expertise-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .expertise-desc {
+      font-size: 15px;
+      color: #333;
+    }
+    .expertise-btn {
+      margin-top: 12px;
       display: inline-block;
-      margin-top: 5px;
+      padding: 6px 12px;
       font-size: 14px;
+      color: #007bff;
+      border: 1px solid #007bff;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .expertise-btn:hover {
+      background: #007bff;
+      color: #fff;
+    }
+
+    .row.skills-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .row.skills-content .col-lg-6 {
+      flex: 1 1 45%;
+    }
+
+    @media (max-width: 768px) {
+      .expertise-card, .row.skills-content .col-lg-6 {
+        flex: 1 1 100%;
+      }
     }
   </style>
 </head>
@@ -222,57 +277,73 @@
   <div class="container">
     <div class="section-title">
       <h2>Skills</h2>
-      <p>Each skill below is supported by real project evidence.</p>
+      <p>Technical proficiency across engineering, test, and yield domains.</p>
     </div>
-
     <div class="row skills-content">
       <div class="col-lg-6">
         <h4>Statistical Analysis <span class="float-end">90%</span></h4>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 90%;">90%</div>
-        </div>
-        <a href="stats.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
-
+        <div class="progress"><div class="progress-bar" style="width: 90%;">90%</div></div>
         <h4>NPI Load Board Design <span class="float-end">85%</span></h4>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 85%;">85%</div>
-        </div>
-        <a href="npi.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+        <div class="progress"><div class="progress-bar" style="width: 85%;">85%</div></div>
       </div>
-
       <div class="col-lg-6">
         <h4>ATE Debugging & TTR <span class="float-end">95%</span></h4>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 95%;">95%</div>
-        </div>
-        <a href="ate.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
-
+        <div class="progress"><div class="progress-bar" style="width: 95%;">95%</div></div>
         <h4>Yield Enhancement <span class="float-end">88%</span></h4>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 88%;">88%</div>
-        </div>
-        <a href="yield.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
-
+        <div class="progress"><div class="progress-bar" style="width: 88%;">88%</div></div>
         <h4>Mentoring & Change Agent <span class="float-end">80%</span></h4>
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
-        </div>
-        <a href="change-agent.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+        <div class="progress"><div class="progress-bar" style="width: 80%;">80%</div></div>
+      </div>
+    </div>
+    <p class="text-muted mt-3">
+      Real project demonstrations are available in the <strong>Expertise</strong> section below.
+    </p>
+  </div>
+</section>
+<section id="expertise" class="section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2>Expertise</h2>
+      <p>Each core expertise is backed by real-world application and demo evidence.</p>
+    </div>
+    <div class="expertise-container">
+      <div class="expertise-card">
+        <div class="expertise-title">Statistical Analysis</div>
+        <div class="expertise-desc">Six Sigma Black Belt. DMAIC, PDCA, SPC, regression & yield root cause analysis.</div>
+        <a href="stats.html" class="expertise-btn">View Demo</a>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-title">NPI Load Board Design</div>
+        <div class="expertise-desc">QFN/BGA/Flip-Chip boards, high-yield DC testing & validation.</div>
+        <a href="npi.html" class="expertise-btn">View Demo</a>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-title">ATE Debugging & TTR</div>
+        <div class="expertise-desc">Debug, socket burn prevention, test time reduction, correlation analysis.</div>
+        <a href="ate.html" class="expertise-btn">View Demo</a>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-title">Yield Enhancement</div>
+        <div class="expertise-desc">Bin analysis, wafer mapping, corner lot investigation, traceability.</div>
+        <a href="yield.html" class="expertise-btn">View Demo</a>
+      </div>
+      <div class="expertise-card">
+        <div class="expertise-title">Mentoring & Change Agent</div>
+        <div class="expertise-desc">Six Sigma mentoring, statistical training, culture shift initiatives.</div>
+        <a href="change-agent.html" class="expertise-btn">View Demo</a>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-// Trigger the animation when the section is visible
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const bars = document.querySelectorAll('.progress-bar');
-      bars.forEach(bar => {
+      document.querySelectorAll('.progress-bar').forEach(bar => {
         const width = bar.style.width;
         bar.style.width = '0';
-        setTimeout(() => { bar.style.width = width; }, 200);
+        setTimeout(() => { bar.style.width = width; }, 100);
       });
     }
   });
@@ -282,6 +353,8 @@ observer.observe(document.querySelector('#skills'));
 
 </body>
 </html>
+
+
     <!-- Resume Section -->
     <section id="resume" class="resume section">
 
@@ -400,69 +473,7 @@ methodology in 2004.</li>
 
 <!-- /Portfolio Section -->
 
-    <!-- Expetise Section -->
-    <!-- ======= Expertise Section ======= -->
-<section id="services" class="services section-bg">
-  <div class="container">
-    <div class="section-title">
-      <h2>Expertise</h2>
-      <p>A snapshot of my key technical domains</p>
-    </div>
 
-    <div class="row">
-
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-        <div class="icon-box">
-        <div class="icon flex-shrink-0"><i class="bx bx-bar-chart"></i></div>
-          <h4>Statistical Analysis Expert</h4>
-          <p>Six Sigma Black Belt. Deep mentoring and implementation of data-driven solutions in manufacturing.</p>
-          <a href="expertise/statistics.html" class="btn btn-outline-primary mt-2">Learn More</a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0">
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-signal-5"></i></div>
-          <h4>RF Qualification & New Tech</h4>
-          <p>Characterization & qualification of RF products for high-volume manufacturing and next-gen technologies.</p>
-          <a href="expertise/rf.html" class="btn btn-outline-primary mt-2">Learn More</a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0">
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-chip"></i></div>
-          <h4>NPI/NTI Load Board Design</h4>
-          <p>Designed pristine load boards for DC testing across multiple platforms and package types.</p>
-          <a href="expertise/load-board.html" class="btn btn-outline-primary mt-2">Learn More</a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-wrench"></i></div>
-          <h4>Test Plan Debug & TTR</h4>
-          <p>ATE test plan development, characterization, TTR optimization, and socket burnout prevention strategies.</p>
-          <a href="expertise/test-debug.html" class="btn btn-outline-primary mt-2">Learn More</a>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4">
-        <div class="icon-box">
-          <div class="icon"><i class="bx bx-trending-up"></i></div>
-          <h4>Yield Enhancement</h4>
-          <p>End-to-end yield analysis and enhancement for NPI and sustaining platforms through data and diagnostics.</p>
-          <a href="expertise/yield.html" class="btn btn-outline-primary mt-2">Learn More</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-<!-- ======= End Expertise Section ======= -->
-
-
-<!-- /Expertise Section -->
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="testimonials section light-background">
