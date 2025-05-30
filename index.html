@@ -1,4 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skills with Demos - Faisal Ahamed</title>
+  <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    .skills .progress {
+      height: 20px;
+      background: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+    .skills .progress-bar {
+      height: 100%;
+      background: #007bff;
+      transition: width 2s ease;
+      padding: 0 10px;
+      color: #fff;
+      line-height: 20px;
+      white-space: nowrap;
+    }
+    .btn-demo {
+      display: inline-block;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
 
+<section id="skills" class="skills section-bg">
+  <div class="container">
+    <div class="section-title">
+      <h2>Skills</h2>
+      <p>Each skill below is supported by real project evidence.</p>
+    </div>
+
+    <div class="row skills-content">
+      <div class="col-lg-6">
+        <h4>Statistical Analysis <span class="float-end">90%</span></h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 90%;">90%</div>
+        </div>
+        <a href="stats.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+
+        <h4>NPI Load Board Design <span class="float-end">85%</span></h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 85%;">85%</div>
+        </div>
+        <a href="npi.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+      </div>
+
+      <div class="col-lg-6">
+        <h4>ATE Debugging & TTR <span class="float-end">95%</span></h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 95%;">95%</div>
+        </div>
+        <a href="ate.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+
+        <h4>Yield Enhancement <span class="float-end">88%</span></h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 88%;">88%</div>
+        </div>
+        <a href="yield.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+
+        <h4>Mentoring & Change Agent <span class="float-end">80%</span></h4>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" style="width: 80%;">80%</div>
+        </div>
+        <a href="change-agent.html" class="btn btn-outline-primary btn-sm btn-demo">View Real Application</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+// Trigger the animation when the section is visible
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bars = document.querySelectorAll('.progress-bar');
+      bars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => { bar.style.width = width; }, 200);
+      });
+    }
+  });
+});
+observer.observe(document.querySelector('#skills'));
+</script>
+
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 
