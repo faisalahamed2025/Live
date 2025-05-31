@@ -58,6 +58,17 @@
 .right {
   max-width: 60%;
 }
+.modal-content {
+  margin: 5% auto;
+  display: block;
+  max-width: 90%;
+  transition: transform 0.3s ease;
+  cursor: zoom-in;
+}
+.modal-content.zoomed {
+  transform: scale(2); /* You can increase to 3 or 4 if you want */
+  cursor: move;
+}
 
 .overlay-buttons a {
   background: #007bff;
