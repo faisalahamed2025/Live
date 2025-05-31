@@ -90,6 +90,22 @@
     “Results are best explained by performance – not just words.”
   </div>
 </div>
+<script>
+let isZoomed = false;
 
+function openModal(img) {
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImage');
+  modal.style.display = 'block';
+  modalImg.src = img.src;
+  modalImg.classList.remove('zoomed');
+  isZoomed = false;
+}
+
+document.getElementById('modalImage').addEventListener('click', function () {
+  this.classList.toggle('zoomed');
+  isZoomed = !isZoomed;
+});
+</script>
 </body>
 </html>
