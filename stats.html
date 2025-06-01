@@ -118,23 +118,7 @@
       </div>
     
     </div>
-  </div>
-</body>
-</html>
-
-<script>
-function zoomImage(imgSrc) {
-  const modal = document.getElementById("zoomModal");
-  const modalImg = document.getElementById("zoomedImg");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-function closeModal() {
-  document.getElementById("zoomModal").style.display = "none";
-}
-</script>
-
-<style>
+  </div><style>
 #zoomModal {
   display: none;
   position: fixed;
@@ -166,3 +150,20 @@ function closeModal() {
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="zoomedImg">
 </div>
+  
+</body>
+</html>
+
+<script>
+function zoomImage(imgSrc) {
+  const modal = document.getElementById("zoomModal");
+  const modalImg = document.getElementById("zoomedImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+function closeModal() {
+  document.getElementById("zoomModal").style.display = "none";
+}
+</script>
+
+
