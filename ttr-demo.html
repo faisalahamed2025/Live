@@ -6,10 +6,8 @@
 <div class="image-wrapper">
   <img src="assets/img/ate-demo.jpg" alt="TTR Demo" onclick="openModal(this)">
   <div class="overlay-buttons">
-  <a href="#" onclick="openModal(document.querySelector('img'))" title="Zoom In" style="font-size: 16px;">
-  🔍<span style="font-weight: bold; font-size: 14px; position: relative; left: -5px;">+</span>
-</a>
-
+<a href="javascript:void(0);" onclick="zoomImage('assets/img/dmaic-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+<a href="#expertise" class="btn btn-outline-secondary btn-sm ml-2">⬅ Back to Expertise</a>
 </div>
 
 <div class="container">
@@ -28,8 +26,8 @@
       <li>Using calibrated reference conditions to eliminate setup time</li>
     </ul>
   </p>
-
-  <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+ <a href="javascript:void(0);" onclick="zoomImage('assets/img/dmaic-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+<a href="#expertise" class="btn btn-outline-secondary btn-sm ml-2">⬅ Back to Expertise</a>
 </div>
 <script>
 let isZoomed = false;
