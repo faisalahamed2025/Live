@@ -20,6 +20,7 @@
       </p>
     <div class="certification-date">Awarded By CEO Mr.Rich Beyer On 14th December 2010</div>
     <img src="assets/plague1.jpg" class="img-fluid mb-4" alt="CEO Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/ttr-graph.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
     </div> 
      
     <div class="col-lg-6">
@@ -31,6 +32,7 @@
       </p> 
     <div class="certification-date">Awarded By CEO Mr.Michel Mayer On 11th April 2005</div>
     <img src="assets/plague2.jpg" class="img-fluid mb-4" alt="CEO Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/ttr-graph.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
     </div>   
     
     <div class="col-lg-6">
@@ -43,8 +45,53 @@
     <div class="certification-date">Awarded By CEO Mr.Gregg Lowe On 14th June 2015</div>
      <img src="assets/Diamond Chip.jpg" class="img-fluid mb-4" alt="CEO Award">
      <img src="assets/plague7.jpg" class="img-fluid mb-4" alt="CEO Award">
-     </div>
+      <a href="javascript:void(0);" onclick="zoomImage('assets/img/ttr-graph.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+    </div>
     </div> 
   <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+<script>
+function zoomImage(imgSrc) {
+  const modal = document.getElementById("zoomModal");
+  const modalImg = document.getElementById("zoomedImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+function closeModal() {
+  document.getElementById("zoomModal").style.display = "none";
+}
+</script>
+  <style>
+#zoomModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+#zoomedImg {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+#zoomModal .close {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<div id="zoomModal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+</div>
+
 </body>
 </html>
