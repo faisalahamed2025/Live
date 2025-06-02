@@ -85,7 +85,7 @@
         ➤ Recognized with <em>Bronze Medal – TEA</em>
       </p>
      <img src="assets/img/eos-yield-graph.jpg" alt="EOS Yield Graph">
-      <a href="javascript:void(0);" onclick="zoomImage('assets/img/placeholder/dmaic-probe.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+      <a href="javascript:void(0);" onclick="zoomImage('assets/img/eos-yield-graph.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
       <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
     </div>
 
@@ -99,7 +99,7 @@
         ➤ Earned <em>Bronze Medal – TEA</em>
       </p>
       <img src="assets/img/ttr-graph.jpg" alt="Test Time Reduction Graph">
-       <a href="javascript:void(0);" onclick="zoomImage('assets/img/placeholder/dmaic-probe.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+       <a href="javascript:void(0);" onclick="zoomImage('assets/img/ttr-graph.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
        <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
     </div>
   </div>
@@ -110,6 +110,16 @@
     “Results are best explained by performance – not just words.”
   </div>
 </div>
-
+<script>
+function zoomImage(imgSrc) {
+  const modal = document.getElementById("zoomModal");
+  const modalImg = document.getElementById("zoomedImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+function closeModal() {
+  document.getElementById("zoomModal").style.display = "none";
+}
+</script>
 </body>
 </html>
