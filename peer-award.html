@@ -2,16 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>👑 CEO Excellence Awards</title>
+  <title>👑 Factory Bravo Award</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f6f9; }
+    .section-title { text-align: center; margin: 40px 0 20px; }
+    .card-title { font-weight: bold; }
+    .card img { height: 200px; object-fit: cover; }
+  </style>
+  </head>
 <body class="bg-light">
   <div class="container text-center mt-5">
-    <h2>👑 CEO Excellence Awards</h2>
-    <p class="lead">Executive-level recognition for delivering $100M revenue from NTI launches and platform migration.</p>
-    <img src="assets/img/awards/ceo.jpg" class="img-fluid mb-4" alt="CEO Award">
-    <p>🔧 Details will be added soon here.</p>
-    <a href="index.html" class="btn btn-secondary">← Back to Home</a>
-  </div>
+    <h2>👑 Factory Bravo Awards</h2>
+    <p class="lead">This award was presented by factory general manager for outstanding contributioin  yield performance.</p>
+  
+    <h3>🔧Bravo Awards🔧</h3>  
+      <p>
+        ➤ Test Automation to transfer from manual mode to auto mode on testers<br>
+        ➤ Test time reduction activity using the best test coding approach<br>
+        ➤ Recognized with <em>Bravo Certificate  by Factory GM</em>
+      </p>
+    <div class="certification-date">Awarded By Factory GM from Q4,2015-Q2,2016</div>
+    <img src="assets/img/Awards/plague6.jpg" class="img-fluid mb-4" alt="Bravo Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/Awards/plague6.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+    </div> 
+    
+  <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+<script>
+function zoomImage(imgSrc) {
+  const modal = document.getElementById("zoomModal");
+  const modalImg = document.getElementById("zoomedImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+function closeModal() {
+  document.getElementById("zoomModal").style.display = "none";
+}
+</script>
+  <style>
+#zoomModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+#zoomedImg {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+#zoomModal .close {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<div id="zoomModal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+</div>
+
 </body>
 </html>
