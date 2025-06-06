@@ -2,16 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>👑 CEO Excellence Awards</title>
+  <title>👑 Techinical Excellence Silver Awards</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f6f9; }
+    .section-title { text-align: center; margin: 40px 0 20px; }
+    .card-title { font-weight: bold; }
+    .card img { height: 200px; object-fit: cover; }
+    .medal-wrapper {
+  position: left;
+  display: inline-block;
+}
+   
+}
+.medal-wrapper img:first-child {
+  width: 20%;
+  height: 20%;
+}
+
+.medal-overlay {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 32px; /* adjust size */
+  height: 32px;
+  z-index: 2;
+}
+    .medal-container {
+  position: left;
+  display: inline-block;
+  width: 18px; /* adjust size */
+  height: 18px;
+  margin-bottom: 4px;
+}
+
+}
+
+
+
+}
+
+
+
+
+.medal-icon {
+  width: 10%;
+  height: 10%;
+  display: block;
+}
+  </style>
+
 <body class="bg-light">
+
+<!-- Top-right Silver Medal Icon -->
+<div class="medal-wrapper">
+<img src="assets/img/Awards/silver-medal.png" alt="silver Medal" class="medal-icon" />
+</div>
+
   <div class="container text-center mt-5">
-    <h2>👑 CEO Excellence Awards</h2>
-    <p class="lead">Executive-level recognition for delivering $100M revenue from NTI launches and platform migration.</p>
-    <img src="assets/img/awards/ceo.jpg" class="img-fluid mb-4" alt="CEO Award">
-    <p>🔧 Details will be added soon here.</p>
-    <a href="index.html" class="btn btn-secondary">← Back to Home</a>
-  </div>
+    <h2>👑 Techinical Excellence Silver Awards</h2>
+    <p class="lead">These awards were presented by factory general manager for outstanding technical contribution to the plant.</p>
+
+    <div class="row">
+    <div class="col-lg-6">
+    <div class="certification-date">Awarded By GM On Q3,2011</div>
+   
+    <h3>🔧MD7IC2050 New DC load Board Development with 4 Point Kelvin System 2011-Silver Medal🔧</h3>  
+      <p>
+        ➤ Pionererd first 4 points kelvin system load board design<br>
+        ➤ Increased Vdson measurement accuracy by 40%<br>
+        ➤ Recognized with <em>Top tier Siver Medal At Factory level</em>
+      </p>
+      <img src="assets/img/Awards/Pattern8.jpg" class="img-fluid mb-4" alt="CEO Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/Awards/Pattern8.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+      <img src="assets/img/Awards/Cert8.jpg" class="img-fluid mb-4" alt="CEO Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/Awards/Cert8.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+    </div> 
+     
+    <div class="col-lg-6">
+    <h3>🔧Integrated Load Board Design MW6IC2240/MW6IC2015 in 2005- Silver Medal.🔧</h3>
+      <p>
+        ➤ Pionered first integrated load board design<br>
+        ➤ Reduced conversiion time by 50% <br>
+        ➤ Recognized with <em>Silver Medal by GM</em>
+      </p> 
+       <img src="assets/img/Awards/Pattern14.jpg" class="img-fluid mb-4" alt="TEA Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/Awards/Pattern14.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+    </div>   
+    
+    <div class="col-lg-6">
+    <h3>🔧MHPA18010 PA Recharacterization in 2004-Silver Medal🔧</h3>
+        <p>
+        ➤ Pioneerd NPI Characterization Study<br>
+        ➤ Utilized all availabel statical tools <br>
+        ➤ Highest Award Whole Company-Silver Awards + Green Belt certification </em>
+      </p> 
+    <div class="certification-date">Awarded By GM On Q3,2004</div>
+     <img src="assets/img/Awards/Pattern16.jpg" class="img-fluid mb-4" alt="tea Award">
+      <a href="javascript:void(0);" onclick="zoomImage('assets/img/Awards/Pattern16.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+    </div>
+    </div> 
+  <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+<script>
+function zoomImage(imgSrc) {
+  const modal = document.getElementById("zoomModal");
+  const modalImg = document.getElementById("zoomedImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+function closeModal() {
+  document.getElementById("zoomModal").style.display = "none";
+}
+</script>
+  <style>
+#zoomModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+#zoomedImg {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+#zoomModal .close {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+
+<div id="zoomModal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+</div>
+
 </body>
 </html>
