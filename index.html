@@ -825,37 +825,7 @@ methodology in 2004.</li>
   <script src="assets/js/main.js"></script>
 <body>
 </div>
-<!<script>
-  const url = window.location.href;
-  const isOwner = url.includes("owner=true");
 
-  // Optional: Detect Hosting Source
-  const isGitHub = url.includes("github.io");
-  const isInfinityFree = url.includes("faisalproject.rf.gd");
-
-  // Only load GA on live pages (no ?owner=true)
-  if (!isOwner) {
-    // Google Analytics enabled for public views
-    const gaScript = document.createElement('script');
-    gaScript.async = true;
-    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-BWRL07CEM6"; // Replace with your real GA ID
-    document.head.appendChild(gaScript);
-
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){ dataLayer.push(arguments); }
-    window.gtag = gtag;
-
-    gtag('js', new Date());
-    gtag('config', 'G-BWRL07CEM6');
-  } else {
-    // KING CRUISE MODE (dev view)
-    document.body.insertAdjacentHTML("afterbegin",
-      '<div style="background:#000;color:#f1c40f;padding:10px;text-align:center;font-size:16px;font-weight:bold;border-bottom:2px solid #f1c40f;">👑 KING CRUISE MODE ACTIVATED — Google Analytics Disabled</div>'
-    );
-    console.warn("🔥 KING CRUISE MODE — Analytics is OFF");
-  }
-</script>--->
-          
 </body>
 </body>
 
