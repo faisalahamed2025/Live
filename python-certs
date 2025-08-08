@@ -1,1 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>👑 Peer To Peer Award</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f4f6f9; }
+    .section-title { text-align: center; margin: 40px 0 20px; }
+    .card-title { font-weight: bold; }
+    .card img { height: 200px; object-fit: cover; }
+  </style>
+  </head>
+<body class="bg-light">
+  <div class="container text-center mt-5">
+    <h2>👑 Peer To Peer Award</h2>
+    <p class="lead">This award was presented by factory Product Group  for outstanding NPI collabration and Qualification.</p>
+  
+    <h3>🔧Peer To Peer Awards🔧</h3>  
+      <p>
+        ➤ Key NPI qualification at short time to market<br>
+        ➤ Best Team collabration between manufacturing group and bussiness grouo<br>
+        ➤ Recognized with <em>Peer To Peer awarded by USA Product team</em>
+      </p>
+    <div class="certification-date">Awarded By USA Product Team in September 28th,2020</div>
+    <img src="assets/img/Awards/plague5.jpg" class="img-fluid mb-4" alt="Peer Award">
+     <a href="javascript:void(0);" onclick="zoomImage('assets/img/Awards/plague5.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
+    </div> 
+    
+  <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+<script>
+function zoomImage(imgSrc) {
+  const modal = document.getElementById("zoomModal");
+  const modalImg = document.getElementById("zoomedImg");
+  modal.style.display = "block";
+  modalImg.src = imgSrc;
+}
+function closeModal() {
+  document.getElementById("zoomModal").style.display = "none";
+}
+</script>
+  <style>
+#zoomModal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+}
+#zoomedImg {
+  display: block;
+  margin: auto;
+  max-width: 90%;
+  max-height: 80%;
+}
+#zoomModal .close {
+  position: absolute;
+  top: 60px;
+  right: 80px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
 
+<div id="zoomModal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+</div>
+
+</body>
+</html>
