@@ -2,113 +2,184 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Next-Gen Stock War Room & Quantitative Monitoring</title>
+  <title>Engineering Portfolio - 2 Column Layout</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
-    body { font-family: Arial, sans-serif; background-color: #f4f6f9; }
-    .section-title { text-align: center; margin: 40px 0 20px; }
-    /* Match the screenshot's card style */
-    .card { border: none; border-radius: 8px; overflow: hidden; height: 100%; }
-    .card-title { font-weight: bold; text-transform: uppercase; font-size: 1.1rem; }
-    .card img { height: 250px; object-fit: contain; background: #eee; }
+    body { font-family: Arial, sans-serif; background-color: #f8f9fa; color: #333; }
+    .section-title { text-align: center; margin: 40px 0 30px; }
+    .section-title h2 { font-weight: 500; color: #2c3e50; }
     
-    /* Button Styles from Screenshot */
-    .zoom-btn {
-      color: #007bff;
+    /* Card styling to match screenshot */
+    .card { border: none; border-radius: 4px; height: 100%; transition: transform 0.2s; }
+    .card-img-top { height: 220px; object-fit: contain; background: #fff; padding: 10px; border-bottom: 1px solid #eee; }
+    .card-title { font-weight: bold; font-size: 1.05rem; line-height: 1.4; min-height: 3rem; }
+    .card-body { padding: 1.25rem; }
+    
+    /* Project details text */
+    .card-body p { margin-bottom: 8px; font-size: 0.95rem; }
+    
+    /* Buttons style from screenshot */
+    .btn-zoom {
       border: 1px solid #007bff;
-      padding: 5px 10px;
-      border-radius: 4px;
-      text-decoration: none !important;
-    }
-    .back-btn {
-      display: inline-block;
-      margin-left: 10px;
       color: #007bff;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+    }
+    .back-link {
+      color: #007bff;
+      font-size: 0.9rem;
+      margin-left: 15px;
       text-decoration: none;
     }
-    .back-btn:hover { text-decoration: underline; }
-    
-    /* Modal Styles */
+    .back-link:hover { text-decoration: underline; }
+
+    /* Modal for Zoom */
     #zoomModal {
-      display: none; position: fixed; z-index: 9999; padding-top: 100px;
-      left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
-      background-color: rgba(0,0,0,0.8);
+      display: none; position: fixed; z-index: 9999; padding-top: 50px;
+      left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9);
     }
-    #zoomedImg { display: block; margin: auto; max-width: 90%; max-height: 80%; }
-    .close-modal { position: absolute; top: 60px; right: 80px; color: white; font-size: 30px; cursor: pointer; }
+    #zoomedImg { display: block; margin: auto; max-width: 90%; max-height: 85%; }
+    .close { position: absolute; top: 20px; right: 35px; color: #fff; font-size: 40px; cursor: pointer; }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <div class="section-title">
-      <h2>Power BI, M Code and Python Integration Engineering Highlights</h2>
-      <p>Institutional-Grade Broker Comparison Engine.</p>
-    </div>
-
-    <div class="row">    
-      
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/DAX PowerBI-DEmo.jpg" class="card-img-top" alt="DAX image">
-          <div class="card-body">
-            <h5 class="card-title">1. Stock War Room Monitoring</h5>
-            <p><strong>Architecture:</strong> Built using Power Query (M Code) for multi-source data ingestion, normalizing disparate fee structures across global brokers.</p>
-            <p><strong>Achievement:</strong> KPI Logic: Developed dynamic DAX measures to compare Gross vs. Net ROI, accounting for Clearing Fees, Stamp Duty, and tiered Brokerage Fees.</p>
-            <p><strong>Feature Set:</strong> Real-time evaluation of fee components (SST, Stamp Price) to determine cost-effective execution.</p>
-            <div class="mt-3">
-                <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/DAX PowerBI-DEmo.jpg')" class="zoom-btn">🔍 Zoom</a>
-                <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-            </div>
-          </div>
-        </div>
-      </div>
-   
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/BuySell Logics_Demo.jpg" class="card-img-top" alt="BuySell Logics_Demo">
-          <div class="card-body">
-            <h5 class="card-title">2. Advanced Risk Management: Stop Loss & Trailing Logics</h5>
-            <p><strong>Project Impact:</strong> Stop Loss Matrix: Implemented Target Exit Price and Stop Loss Price triggers using DAX to visualize states.</p>
-            <p><strong>Achievement:</strong> Volatility-Adjusted Stops: Integrated ATR-based trailing stop loss logic via Python scripts to adapt to market volatility.</p>
-            <p><strong>Simulation:</strong> Created an "Investment Simulator" using What-If Parameters for stress-test scenarios.</p>
-            <div class="mt-3">
-                <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/BuySell Logics_Demo.jpg')" class="zoom-btn">🔍 Zoom</a>
-                <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/rsm-demo.jpg" class="card-img-top" alt="rsm image">
-          <div class="card-body">
-            <h5 class="card-title">3. RSM – Response Surface Modeling Optimization</h5>
-            <p><strong>Project Impact:</strong> Yield increased from 94% to 99%</p>
-            <p><strong>Achievement:</strong> Used RSM to optimize bond pull strength optimization</p>
-            <p><strong>Cost Savings:</strong> $400K/year</p>
-            <div class="mt-3">
-                <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/rsm-demo.jpg')" class="zoom-btn">🔍 Zoom</a>
-                <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-      </div> </div> <div id="zoomModal" onclick="closeModal()">
-    <span class="close-modal">&times;</span>
-    <img id="zoomedImg">
+<div class="container">
+  <div class="section-title">
+    <h2>Statistical Engineering Highlights</h2>
+    <p class="text-muted">Project-based applications of Six Sigma and analytical engineering with real-world impact.</p>
   </div>
 
-  <script>
-    function zoomImage(imgSrc) {
-      document.getElementById("zoomModal").style.display = "block";
-      document.getElementById("zoomedImg").src = imgSrc;
-    }
-    function closeModal() {
-      document.getElementById("zoomModal").style.display = "none";
-    }
-  </script>
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/DAX PowerBI-DEmo.jpg" class="card-img-top" alt="Project 1">
+        <div class="card-body">
+          <h5 class="card-title">1. DMAIC – MHPA18010 NPI QUAL PROJECTS- GREEN BELT PROJECT</h5>
+          <p><strong>Project Impact:</strong> Improved test yield from 95% to 99% through Cpk improvement from 0.97 to 1.8.</p>
+          <p><strong>Achievement:</strong> Applied Fishbone analysis, 5-Why, RSM, DOE, Comparative Method.</p>
+          <p><strong>Cost Savings:</strong> $180K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/DAX PowerBI-DEmo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/BuySell Logics_Demo.jpg" class="card-img-top" alt="Project 2">
+        <div class="card-body">
+          <h5 class="card-title">2. DMADV – MD7IC2050N VDSON TEST ACCURACY IMPROVEMENT BY 50%-SILVER MEDAL PROJECT</h5>
+          <p><strong>Project Impact:</strong> Pioneered 4 point accurate 4 point kelvin measurement systems.</p>
+          <p><strong>Achievement:</strong> DMADV statistical tools approach to redesign load board to match curve tracer measurements.</p>
+          <p><strong>Cost Savings:</strong> $250K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/BuySell Logics_Demo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/rsm-demo.jpg" class="card-img-top" alt="Project 3">
+        <div class="card-body">
+          <h5 class="card-title">3. RSM – Response Surface Modeling On Bond Pull Strength Optimization</h5>
+          <p><strong>Project Impact:</strong> Yield increased from 94% to 99%</p>
+          <p><strong>Achievement:</strong> Used RSM to optimize bond pull strength optimization</p>
+          <p><strong>Cost Savings:</strong> $400K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/rsm-demo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/doe-demo.jpg" class="card-img-top" alt="Project 4">
+        <div class="card-body">
+          <h5 class="card-title">4. DOE – Design of experiments on shunt/series impact on RF performance</h5>
+          <p><strong>Project Impact:</strong> 2-Factor 2-Level Was designed to study RF performance</p>
+          <p><strong>Achievement:</strong> 2⁴ DOE identified optimum test range</p>
+          <p><strong>Cost Savings:</strong> $300K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/doe-demo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/spc-demo.jpg" class="card-img-top" alt="Project 5">
+        <div class="card-body">
+          <h5 class="card-title">5. SPC – Statistical Process Control M52A MASK Series Cap Nitride Thickness</h5>
+          <p><strong>Project Impact:</strong> SPC flagged drift 48 hours before spec breach</p>
+          <p><strong>Achievement:</strong> Developed SPC run chart system for inline monitoring</p>
+          <p><strong>Cost Savings:</strong> $150K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/spc-demo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/pdcaesd-demo.jpg" class="card-img-top" alt="Project 6">
+        <div class="card-body">
+          <h5 class="card-title">6. PDCA – ESD Failure Recovery On DC Block Cap Ruptured</h5>
+          <p><strong>Project Impact:</strong> Customer complaints down 70%, escape prevention</p>
+          <p><strong>Achievement:</strong> Closed-loop response with PDCA Identified Trim Process as Root Cause</p>
+          <p><strong>Cost Savings:</strong> $500K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/pdcaesd-demo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card shadow-sm">
+        <img src="assets/img/Expertise/reg-demo.jpg" class="card-img-top" alt="Project 7">
+        <div class="card-body">
+          <h5 class="card-title">7. Regression – Happentace Data Correlation Test Parameters and Wire Profile</h5>
+          <p><strong>Project Impact:</strong> Establish Strong Correlation Using Stepwise Regression Model</p>
+          <p><strong>Achievement:</strong> Built regression model for test efficiency planning</p>
+          <p><strong>Cost Savings:</strong> $500K/year</p>
+          <div class="mt-3">
+            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/reg-demo.jpg')" class="btn-zoom">🔍 Zoom</a>
+            <a href="index.html#expertise" class="back-link">← Back to Expertise</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="zoomModal" onclick="this.style.display='none'">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="zoomedImg">
+</div>
+
+<script>
+function zoomImage(imgSrc) {
+  document.getElementById("zoomModal").style.display = "block";
+  document.getElementById("zoomedImg").src = imgSrc;
+}
+</script>
+
 </body>
 </html>
