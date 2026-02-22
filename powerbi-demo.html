@@ -7,179 +7,108 @@
   <style>
     body { font-family: Arial, sans-serif; background-color: #f4f6f9; }
     .section-title { text-align: center; margin: 40px 0 20px; }
-    .card-title { font-weight: bold; }
-    .card img { height: 200px; object-fit: cover; }
-      }
-     .back-btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 8px 16px;
-      background: #007bff;
-      color: #fff;
-      text-decoration: none;
+    /* Match the screenshot's card style */
+    .card { border: none; border-radius: 8px; overflow: hidden; height: 100%; }
+    .card-title { font-weight: bold; text-transform: uppercase; font-size: 1.1rem; }
+    .card img { height: 250px; object-fit: contain; background: #eee; }
+    
+    /* Button Styles from Screenshot */
+    .zoom-btn {
+      color: #007bff;
+      border: 1px solid #007bff;
+      padding: 5px 10px;
       border-radius: 4px;
+      text-decoration: none !important;
     }
-    .back-btn:hover {
-      background: #0056b3;
+    .back-btn {
+      display: inline-block;
+      margin-left: 10px;
+      color: #007bff;
+      text-decoration: none;
     }
+    .back-btn:hover { text-decoration: underline; }
+    
+    /* Modal Styles */
+    #zoomModal {
+      display: none; position: fixed; z-index: 9999; padding-top: 100px;
+      left: 0; top: 0; width: 100%; height: 100%; overflow: auto;
+      background-color: rgba(0,0,0,0.8);
+    }
+    #zoomedImg { display: block; margin: auto; max-width: 90%; max-height: 80%; }
+    .close-modal { position: absolute; top: 60px; right: 80px; color: white; font-size: 30px; cursor: pointer; }
   </style>
 </head>
 <body>
+
   <div class="container">
     <div class="section-title">
-      <h2>Power BI,M Code and Python Integration Engineering Highlights</h2>
+      <h2>Power BI, M Code and Python Integration Engineering Highlights</h2>
       <p>Institutional-Grade Broker Comparison Engine.</p>
     </div>
 
-
-  <div class="row">    
-       <div class="col-md-6 mb-4">
-       <div class="card shadow-sm">
-          <img src="assets/img/Expertise/DAX PowerBI-DEmo.jpg"  class="card-img-top" alt="DAX  image">
+    <div class="row">    
+      
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm">
+          <img src="assets/img/Expertise/DAX PowerBI-DEmo.jpg" class="card-img-top" alt="DAX image">
           <div class="card-body">
-            <h5 class="card-title">1.Stock War Room Monmitoring </h5>
-            <p><strong>Architecture: Built using Power Query (M Code) for multi-source data ingestion, normalizing disparate fee structures across global brokers.</p>
-            <p><strong>Achievement:</strong>KPI Logic: Developed dynamic DAX measures to compare Gross vs. Net ROI, accounting for Clearing Fees, Stamp Duty, and tiered Brokerage Fees (e.g., CGS-iTrade vs. Maybank Trade). </p>
-            <p><strong>Feature Set: Real-time evaluation of fee components (SST, Stamp Price) to determine the most cost-effective execution platform for high-frequency or long-term positions.</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/DAX PowerBI-DEmo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-            <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+            <h5 class="card-title">1. Stock War Room Monitoring</h5>
+            <p><strong>Architecture:</strong> Built using Power Query (M Code) for multi-source data ingestion, normalizing disparate fee structures across global brokers.</p>
+            <p><strong>Achievement:</strong> KPI Logic: Developed dynamic DAX measures to compare Gross vs. Net ROI, accounting for Clearing Fees, Stamp Duty, and tiered Brokerage Fees.</p>
+            <p><strong>Feature Set:</strong> Real-time evaluation of fee components (SST, Stamp Price) to determine cost-effective execution.</p>
+            <div class="mt-3">
+                <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/DAX PowerBI-DEmo.jpg')" class="zoom-btn">🔍 Zoom</a>
+                <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+            </div>
           </div>
         </div>
-        </div>
-   
+      </div>
    
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
           <img src="assets/img/Expertise/BuySell Logics_Demo.jpg" class="card-img-top" alt="BuySell Logics_Demo">
           <div class="card-body">
-            <h5 class="card-title">2.Advanced Risk Management: Stop Loss & Trailing Logics</h5>
-            <p><strong>Project Impact:Stop Loss Matrix: Implemented Target Exit Price and Stop Loss Price triggers using DAX to visualize "In-Profit" vs. "Unrealized" states.</strong></p>
-            <p><strong>Achievement:</strong> Volatility-Adjusted Stops: Integrated ATR-based (Average True Range) trailing stop loss logic via Python scripts to adapt to market volatility rather than using static percentages.</p>
-            <p><strong> Simulation: :</strong>Created an "Investment Simulator" using What-If Parameters, allowing users to stress-test their portfolio against 5%–10% drawdown scenarios in real-time.</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/BuySell Logics_Demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-           <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+            <h5 class="card-title">2. Advanced Risk Management: Stop Loss & Trailing Logics</h5>
+            <p><strong>Project Impact:</strong> Stop Loss Matrix: Implemented Target Exit Price and Stop Loss Price triggers using DAX to visualize states.</p>
+            <p><strong>Achievement:</strong> Volatility-Adjusted Stops: Integrated ATR-based trailing stop loss logic via Python scripts to adapt to market volatility.</p>
+            <p><strong>Simulation:</strong> Created an "Investment Simulator" using What-If Parameters for stress-test scenarios.</p>
+            <div class="mt-3">
+                <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/BuySell Logics_Demo.jpg')" class="zoom-btn">🔍 Zoom</a>
+                <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+            </div>
           </div>
         </div>
-       </div>
-      
+      </div>
 
       <div class="col-md-6 mb-4">
         <div class="card shadow-sm">
-          <img src="assets/img/Expertise/rsm-demo.jpg"  class="card-img-top" alt="rsm image">
+          <img src="assets/img/Expertise/rsm-demo.jpg" class="card-img-top" alt="rsm image">
           <div class="card-body">
-            <h5 class="card-title">3.RSM –Response Surfece Modeling On Bond Pull Strength Optimization</h5>
+            <h5 class="card-title">3. RSM – Response Surface Modeling Optimization</h5>
             <p><strong>Project Impact:</strong> Yield increased from 94% to 99%</p>
             <p><strong>Achievement:</strong> Used RSM to optimize bond pull strength optimization</p>
             <p><strong>Cost Savings:</strong> $400K/year</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/rsm-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-            <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+            <div class="mt-3">
+                <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/rsm-demo.jpg')" class="zoom-btn">🔍 Zoom</a>
+                <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
+            </div>
           </div>
         </div>
       </div>
     
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/doe-demo.jpg" class="card-img-top" alt="Leakage Bias Optimization image">
-          <div class="card-body">
-            <h5 class="card-title">4. DOE –Design of experiments on shunt/series impact on RF performance</h5>
-            <p><strong>Project Impact:</strong> 2-Factor 2-Level Was designed to study RF performance </p>
-            <p><strong>Achievement:</strong> 2⁴ DOE identified optimum test range</p>
-            <p><strong>Cost Savings:</strong> $300K/year</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/doe-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-            <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-          </div>
-        </div>
-      </div>
-    
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/spc-demo.jpg" class="card-img-top" alt="Voltage Drift Early Alert image">
-          <div class="card-body">
-            <h5 class="card-title">5. SPC –Statistical Process Control M52A MASK Series Cap Nitride Thickness</h5>
-            <p><strong>Project Impact:</strong> SPC flagged drift 48 hours before spec breach</p>
-            <p><strong>Achievement:</strong> Developed SPC run chart system for inline monitoring</p>
-            <p><strong>Cost Savings:</strong> $150K/year</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/spc-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-            <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-          </div>
-        </div>
-      </div>
-    
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/pdcaesd-demo.jpg" class="card-img-top" alt="ESD Failure Recovery image">
-          <div class="card-body">
-            <h5 class="card-title">6.PDCA –ESD Failure Recovery On DC Block Cap Ruptured</h5>
-            <p><strong>Project Impact:</strong> Customer complaints down 70%, escape prevention</p>
-            <p><strong>Achievement:</strong> Closed-loop response implemented with PDCA Identfied Trim Process as Root Cause</p>
-            <p><strong>Cost Savings:</strong> $500K/year</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/pdcaesd-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-            <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-          </div>
-        </div>
-      </div>
-    
-      <div class="col-md-6 mb-4">
-        <div class="card shadow-sm">
-          <img src="assets/img/Expertise/reg-demo.jpg" class="card-img-top" alt="Test Coverage vs Time image">
-          <div class="card-body">
-            <h5 class="card-title">7. Regression –Happentace Data Correlation Test Parameters and Wire Profile</h5>
-            <p><strong>Project Impact:</strong>Establish Strong Correlation Using Stepwise Regression Model</p>
-            <p><strong>Achievement:</strong> Built regression model for test efficiency planning</p>
-            <p><strong>Cost Savings:</strong>$500K per year</p>
-            <a href="javascript:void(0);" onclick="zoomImage('assets/img/Expertise/reg-demo.jpg')" class="btn btn-outline-primary btn-sm">🔍 Zoom</a>
-          <a href="index.html#expertise" class="back-btn">← Back to Expertise</a>
-          </div>
-        </div>
-      </div>
-   
+      </div> </div> <div id="zoomModal" onclick="closeModal()">
+    <span class="close-modal">&times;</span>
+    <img id="zoomedImg">
   </div>
-  </div>
+
+  <script>
+    function zoomImage(imgSrc) {
+      document.getElementById("zoomModal").style.display = "block";
+      document.getElementById("zoomedImg").src = imgSrc;
+    }
+    function closeModal() {
+      document.getElementById("zoomModal").style.display = "none";
+    }
+  </script>
 </body>
 </html>
-
-<script>
-function zoomImage(imgSrc) {
-  const modal = document.getElementById("zoomModal");
-  const modalImg = document.getElementById("zoomedImg");
-  modal.style.display = "block";
-  modalImg.src = imgSrc;
-}
-function closeModal() {
-  document.getElementById("zoomModal").style.display = "none";
-}
-</script>
-
-<style>
-#zoomModal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding-top: 100px;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-}
-#zoomedImg {
-  display: block;
-  margin: auto;
-  max-width: 90%;
-  max-height: 80%;
-}
-#zoomModal .close {
-  position: absolute;
-  top: 60px;
-  right: 80px;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  cursor: pointer;
-}
-</style>
-
-<div id="zoomModal" onclick="closeModal()">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="zoomedImg">
-</div>
-
