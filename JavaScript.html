@@ -1,61 +1,91 @@
+<style>
+    .war-room-table {
+        background: rgba(15, 15, 15, 0.95);
+        border: 1px solid #333;
+        font-family: 'Courier New', Courier, monospace;
+        color: #00ff41; /* Classic Matrix/Terminal Green */
+    }
+    .status-pulse {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+        animation: pulse 1.5s infinite;
+    }
+    @keyframes pulse {
+        0% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(1.2); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    .text-orange { color: #ffc107; }
+    .text-cyan { color: #0dcaf0; }
+    .table-hover tbody tr:hover {
+        background-color: rgba(0, 255, 65, 0.05) !important;
+    }
+</style>
+
 <div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-6 shadow p-4 rounded bg-light">
-            <h2 class="text-center mb-4">Get in Touch</h2>
-            <form action="send_mail.php" method="POST">
-                <div class="mb-3">
-                    <label class="form-label">Full Name</label>
-                    <input type="text" name="name" class="form-control" placeholder="John Doe" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Email Address</label>
-                    <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Message</label>
-                    <textarea name="message" class="form-control" rows="4" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">Send Message</button>
-            </form>
+    <div class="war-room-table p-4 rounded shadow-lg">
+        <div class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2">
+            <h6 class="m-0 text-uppercase tracking-widest"><i class="bi bi-terminal"></i> System Architecture Telemetry</h6>
+            <span class="badge bg-danger small">LIVE DATA</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-dark table-hover align-middle mb-0">
+                <thead class="text-secondary small text-uppercase">
+                    <tr>
+                        <th>Module</th>
+                        <th>Technology</th>
+                        <th>Status</th>
+                        <th>Telemetry / Role</th>
+                    </tr>
+                </thead>
+                <tbody class="small">
+                    <tr>
+                        <td><span class="text-white fw-bold">FRONTEND UI</span></td>
+                        <td>Bootstrap 5.3</td>
+                        <td><span class="status-pulse" style="background-color: #28a745;"></span>ACTIVE</td>
+                        <td class="text-secondary italic">Responsive Liquid Layout</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-white fw-bold">LOGIC LAYER</span></td>
+                        <td>JavaScript / ES6</td>
+                        <td><span class="status-pulse" style="background-color: #28a745;"></span>RUNNING</td>
+                        <td class="text-secondary">Client-side DOM Manipulation</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-white fw-bold">CORE ENGINE</span></td>
+                        <td>PHP 8.x</td>
+                        <td><span class="status-pulse" style="background-color: #28a745;"></span>STABLE</td>
+                        <td class="text-secondary">Server-side Data Processing</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-white fw-bold">MAIL RELAY</span></td>
+                        <td>SMTP / PHPMailer</td>
+                        <td><span class="status-pulse" style="background-color: #ffc107;"></span><span class="text-orange">STANDBY</span></td>
+                        <td class="text-secondary">Background Email Queuing</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-white fw-bold">VCS</span></td>
+                        <td>GitHub</td>
+                        <td><span class="status-pulse" style="background-color: #0dcaf0;"></span><span class="text-cyan">SYNCED</span></td>
+                        <td class="text-secondary">CI/CD Pipeline Pipeline</td>
+                    </tr>
+                    <tr>
+                        <td><span class="text-white fw-bold">HOST NODE</span></td>
+                        <td>Infinity Cluster</td>
+                        <td><span class="status-pulse" style="background-color: #28a745;"></span>ONLINE</td>
+                        <td class="text-secondary">rf.gd Edge Server</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="mt-3 small text-secondary d-flex justify-content-between">
+            <span>Uptime: 99.9%</span>
+            <span>Loc: Global CDN</span>
         </div>
     </div>
 </div>
-<?php
-// Note: You must upload the PHPMailer folder to your Infinity htdocs via GitHub or FTP
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $mail = new PHPMailer(true);
-
-    try {
-        // Server settings for Infinity/Gmail/Outlook
-        $mail->isSMTP();
-        $mail->Host       = 'smtp.gmail.com'; // Or your SMTP provider
-        $mail->SMTPAuth   = true;
-        $mail->Username   = 'your-email@gmail.com'; 
-        $mail->Password   = 'your-app-password'; 
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-        $mail->Port       = 587;
-
-        // Recipients
-        $mail->setFrom($_POST['email'], $_POST['name']);
-        $mail->addAddress('your-email@gmail.com'); 
-
-        // Content
-        $mail->isHTML(true);
-        $mail->Subject = 'New Portfolio Inquiry';
-        $mail->Body    = "Name: " . $_POST['name'] . "<br>Email: " . $_POST['email'] . "<br><br>" . $_POST['message'];
-
-        $mail->send();
-        echo 'Message sent successfully!';
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
-}
-?>
-
