@@ -1,91 +1,86 @@
 <style>
-    .war-room-table {
-        background: rgba(15, 15, 15, 0.95);
+    .terminal-bg {
+        background-color: #0d0d0d;
         border: 1px solid #333;
         font-family: 'Courier New', Courier, monospace;
-        color: #00ff41; /* Classic Matrix/Terminal Green */
     }
-    .status-pulse {
+    .status-dot {
         display: inline-block;
-        width: 10px;
-        height: 10px;
+        width: 8px;
+        height: 8px;
         border-radius: 50%;
         margin-right: 8px;
-        animation: pulse 1.5s infinite;
+        box-shadow: 0 0 8px currentColor;
     }
-    @keyframes pulse {
-        0% { opacity: 1; transform: scale(1); }
-        50% { opacity: 0.4; transform: scale(1.2); }
-        100% { opacity: 1; transform: scale(1); }
-    }
-    .text-orange { color: #ffc107; }
-    .text-cyan { color: #0dcaf0; }
-    .table-hover tbody tr:hover {
-        background-color: rgba(0, 255, 65, 0.05) !important;
+    .active-glow { color: #28a745; animation: blink 2s infinite; }
+    .standby-glow { color: #ffc107; }
+    .sync-glow { color: #17a2b8; }
+    
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
     }
 </style>
 
 <div class="container mt-5">
-    <div class="war-room-table p-4 rounded shadow-lg">
+    <div class="terminal-bg p-4 rounded shadow-lg text-light">
         <div class="d-flex justify-content-between align-items-center mb-3 border-bottom border-secondary pb-2">
-            <h6 class="m-0 text-uppercase tracking-widest"><i class="bi bi-terminal"></i> System Architecture Telemetry</h6>
-            <span class="badge bg-danger small">LIVE DATA</span>
+            <span class="text-uppercase fw-bold small tracking-widest text-secondary">
+                <i class="bi bi-cpu-fill me-2"></i>System Architecture Telemetry
+            </span>
+            <span class="badge rounded-pill bg-dark border border-success text-success small">Uptime: 99.9%</span>
         </div>
 
         <div class="table-responsive">
-            <table class="table table-dark table-hover align-middle mb-0">
-                <thead class="text-secondary small text-uppercase">
-                    <tr>
-                        <th>Module</th>
-                        <th>Technology</th>
-                        <th>Status</th>
-                        <th>Telemetry / Role</th>
+            <table class="table table-dark table-borderless align-middle mb-0">
+                <thead>
+                    <tr class="text-secondary small border-bottom border-secondary">
+                        <th class="pb-3">MODULE</th>
+                        <th class="pb-3">TECHNOLOGY</th>
+                        <th class="pb-3">STATUS</th>
+                        <th class="pb-3">TELEMETRY / ROLE</th>
                     </tr>
                 </thead>
                 <tbody class="small">
                     <tr>
-                        <td><span class="text-white fw-bold">FRONTEND UI</span></td>
-                        <td>Bootstrap 5.3</td>
-                        <td><span class="status-pulse" style="background-color: #28a745;"></span>ACTIVE</td>
-                        <td class="text-secondary italic">Responsive Liquid Layout</td>
+                        <td class="fw-bold py-3">Frontend UI</td>
+                        <td><code class="text-info bg-transparent p-0">Bootstrap 5.3</code></td>
+                        <td><span class="status-dot active-glow" style="background-color: #28a745;"></span>ACTIVE</td>
+                        <td class="text-secondary">Responsive Liquid Layout</td>
                     </tr>
                     <tr>
-                        <td><span class="text-white fw-bold">LOGIC LAYER</span></td>
-                        <td>JavaScript / ES6</td>
-                        <td><span class="status-pulse" style="background-color: #28a745;"></span>RUNNING</td>
+                        <td class="fw-bold py-3">Logic Layer</td>
+                        <td><code class="text-info bg-transparent p-0">JavaScript / ES6</code></td>
+                        <td><span class="status-dot active-glow" style="background-color: #28a745;"></span>RUNNING</td>
                         <td class="text-secondary">Client-side DOM Manipulation</td>
                     </tr>
                     <tr>
-                        <td><span class="text-white fw-bold">CORE ENGINE</span></td>
-                        <td>PHP 8.x</td>
-                        <td><span class="status-pulse" style="background-color: #28a745;"></span>STABLE</td>
+                        <td class="fw-bold py-3">Core Engine</td>
+                        <td><code class="text-info bg-transparent p-0">PHP 8.x</code></td>
+                        <td><span class="status-dot active-glow" style="background-color: #28a745;"></span>STABLE</td>
                         <td class="text-secondary">Server-side Data Processing</td>
                     </tr>
                     <tr>
-                        <td><span class="text-white fw-bold">MAIL RELAY</span></td>
-                        <td>SMTP / PHPMailer</td>
-                        <td><span class="status-pulse" style="background-color: #ffc107;"></span><span class="text-orange">STANDBY</span></td>
+                        <td class="fw-bold py-3">Mail Relay</td>
+                        <td><code class="text-info bg-transparent p-0">SMTP / PHPMailer</code></td>
+                        <td><span class="status-dot standby-glow" style="background-color: #ffc107;"></span>STANDBY</td>
                         <td class="text-secondary">Background Email Queuing</td>
                     </tr>
                     <tr>
-                        <td><span class="text-white fw-bold">VCS</span></td>
-                        <td>GitHub</td>
-                        <td><span class="status-pulse" style="background-color: #0dcaf0;"></span><span class="text-cyan">SYNCED</span></td>
-                        <td class="text-secondary">CI/CD Pipeline Pipeline</td>
+                        <td class="fw-bold py-3">VCS</td>
+                        <td><code class="text-info bg-transparent p-0">GitHub</code></td>
+                        <td><span class="status-dot sync-glow" style="background-color: #17a2b8;"></span>SYNCED</td>
+                        <td class="text-secondary">CI/CD Deployment Pipeline</td>
                     </tr>
                     <tr>
-                        <td><span class="text-white fw-bold">HOST NODE</span></td>
-                        <td>Infinity Cluster</td>
-                        <td><span class="status-pulse" style="background-color: #28a745;"></span>ONLINE</td>
+                        <td class="fw-bold py-3">Host Node</td>
+                        <td><code class="text-info bg-transparent p-0">Infinity Cluster</code></td>
+                        <td><span class="status-dot active-glow" style="background-color: #28a745;"></span>ONLINE</td>
                         <td class="text-secondary">rf.gd Edge Server</td>
                     </tr>
                 </tbody>
             </table>
-        </div>
-        
-        <div class="mt-3 small text-secondary d-flex justify-content-between">
-            <span>Uptime: 99.9%</span>
-            <span>Loc: Global CDN</span>
         </div>
     </div>
 </div>
