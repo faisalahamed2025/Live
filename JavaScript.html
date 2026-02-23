@@ -3,16 +3,15 @@
 
 <style>
     body {
-        background-color: #0d1117;
-        color: #e6edf3;
+        background-color: #f8f9fa;
         font-family: "Courier New", monospace;
     }
 
     .dashboard-card {
-        background-color: #161b22;
-        border: 1px solid #30363d;
+        background-color: #ffffff;
         border-radius: 12px;
-        box-shadow: 0 0 25px rgba(0, 255, 150, 0.05);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e9ecef;
     }
 
     .dashboard-header {
@@ -20,7 +19,7 @@
         letter-spacing: 1px;
         text-transform: uppercase;
         font-size: 14px;
-        color: #8b949e;
+        color: #6c757d;
     }
 
     .status-dot {
@@ -34,21 +33,22 @@
     .synced { color: #17a2b8; }
     .online { color: #28a745; }
 
-    .table-dark-custom {
-        --bs-table-bg: transparent;
-        --bs-table-border-color: #30363d;
+    .live-badge {
+        font-size: 12px;
+        padding: 6px 10px;
+        border-radius: 50px;
     }
 </style>
 
 <div class="container py-5">
     <div class="dashboard-card p-4">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <h4 class="mb-0">🖥️ PROJECT DASHBOARD: SYSTEM STATUS</h4>
-            <span class="badge bg-success">LIVE</span>
+            <h4 class="mb-0 text-dark">🖥️ PROJECT DASHBOARD: SYSTEM STATUS</h4>
+            <span class="badge bg-success live-badge">LIVE</span>
         </div>
 
         <div class="table-responsive">
-            <table class="table table-dark table-dark-custom align-middle">
+            <table class="table align-middle">
                 <thead>
                     <tr class="dashboard-header">
                         <th>Module</th>
@@ -68,7 +68,7 @@
                         <td>Logic Layer</td>
                         <td>JavaScript / ES6</td>
                         <td><span class="status-dot running">● RUNNING</span></td>
-                        <td>Client-side DOM Manipation</td>
+                        <td>Client-side DOM Manipulation</td>
                     </tr>
                     <tr>
                         <td>Core Engine</td>
