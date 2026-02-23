@@ -1,1 +1,61 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow p-4 rounded bg-light">
+            <h2 class="text-center mb-4">Get in Touch</h2>
+            <form action="send_mail.php" method="POST">
+                <div class="mb-3">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" name="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" name="email" class="form-control" placeholder="name@example.com" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea name="message" class="form-control" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Send Message</button>
+            </form>
+        </div>
+    </div>
+</div>
+<?php
+// Note: You must upload the PHPMailer folder to your Infinity htdocs via GitHub or FTP
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $mail = new PHPMailer(true);
+
+    try {
+        // Server settings for Infinity/Gmail/Outlook
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com'; // Or your SMTP provider
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'your-email@gmail.com'; 
+        $mail->Password   = 'your-app-password'; 
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port       = 587;
+
+        // Recipients
+        $mail->setFrom($_POST['email'], $_POST['name']);
+        $mail->addAddress('your-email@gmail.com'); 
+
+        // Content
+        $mail->isHTML(true);
+        $mail->Subject = 'New Portfolio Inquiry';
+        $mail->Body    = "Name: " . $_POST['name'] . "<br>Email: " . $_POST['email'] . "<br><br>" . $_POST['message'];
+
+        $mail->send();
+        echo 'Message sent successfully!';
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+}
+?>
 
